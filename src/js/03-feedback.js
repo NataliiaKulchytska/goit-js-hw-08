@@ -9,7 +9,7 @@ const infoForm = {};
 form.addEventListener('input', throttle(onInput, 500));
 form.addEventListener('submit', onSubmit);
 
-
+initForm()
 function onInput(e) {        
    
     infoForm[e.target.name] = e.target.value;
@@ -43,7 +43,7 @@ function initForm() {
   if (save) {
     save = JSON.parse(save);
     Object.entries(save).forEach(([name, value]) => {
-      onInput.elements[name].value = value;
+      form.elements[name].value = value;
     });
   }
 };
